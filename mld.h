@@ -72,4 +72,31 @@ int add_structure_to_struct_db(struct_db_t *struct_db, struct_db_rec_t *struct_r
         }                                                            \
     }while(0);
 
+
+//Object Data base Definition Begin
+
+typedef struct object_db_rec object_db_rec_t;
+
+struct object_db_rec{
+    object_db_rec_t *next;
+    void *ptr;
+    unsigned int units;
+    struct_db_rec_t *struct_rec;
+};
+
+typedef struct object_db{
+    struct_db_t *struct_db;
+    object_db_rec_t *head;
+    unsigned int count;
+} object_db_t;
+
+//Structure Data base Definition End
+//Function Prototypes
+
+void print_object_rec(object_db_rec_t *obj_rec, int i);
+
+void print_object_db(object_db_t *object_db);
+
+void* xcalloc(object_db_t *object_db, char *struct_name, int units);
+
 #endif 
