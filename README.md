@@ -1,0 +1,1 @@
+Implemented a garbage collector for C programs which works on the principle of reachability of objects to detect memory leaks and analyzed its limitations and cost for being an inbuilt feature of C-like language.
